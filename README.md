@@ -1,2 +1,2 @@
 # project_Onlineshop
-Onlineshop mit NodeJS und MySQL erstellen
+Onlineshop mit NodeJS, VueJS und MySQL erstellen
