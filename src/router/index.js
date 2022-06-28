@@ -6,22 +6,22 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     name: "Home",
     component: HomeView,
   },
   {
-    path: "/MyList",
+    path: "/list",
     name: "MyList",
     component: () => import("../views/MyList.vue"),
   },
   {
-    path: "/MyCart",
+    path: "/cart",
     name: "MyCart",
     component: () => import("../views/MyCart.vue"),
   },
   {
-    path: "/MyPage",
+    path: "/my",
     name: "MyPage",
     component: () => import("../views/MyPage.vue"),
   },
