@@ -5,8 +5,8 @@
 			   v-for= '(item, index) in routerList':key='index'
 			   @click='switchTab(item.path)' 
 			> <!--:key中间不能有空格-->
-				<img :src='item.active' alt=''>
-				<span>{{item.title}}</span>
+				<img :src='$route.path.includes(item.path) ? item.selected : item.active' alt=''>
+				<span :class='$route.path.includes(item.path) ? "active" : "" '>{{item.title}}</span>
 			</li>
 		</ul>
 	</div>
@@ -85,5 +85,8 @@ export default{
 }
 .tabbar ul li span{
 	font-size: 16px;
+}
+.active{
+	color: red;
 }
 </style>
