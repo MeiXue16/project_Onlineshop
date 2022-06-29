@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Tabbar from '../components/commen/Tabbar.vue'
+import Tabbar from '@/components/commen/Tabbar.vue'
 export default {
   name: "MyList",
   components:{
