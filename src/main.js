@@ -3,9 +3,11 @@ import Vue from "vue";
 import App from "@/App.vue";
 import router from "@/router";
 import store from "@/store";
-//public css file
+//public css file 公共css文件
 import '@/assets/css/common.css';
-//Taobao Wireless Adaptation File
+//字体图标css文件：放大镜，客服
+import '@/assets/css/iconfont.css'
+//Taobao Wireless Adaptation File 淘宝无线适配文件
 import '@/assets/js/flexible'
 
 Vue.config.productionTip = false;
