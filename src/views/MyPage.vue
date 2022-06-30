@@ -1,17 +1,16 @@
 <template>
   <div class="my">
-	  this is my.
-	  <Tabbar></Tabbar>
-  
+    this is my.
+    <Tabbar></Tabbar>
   </div>
 </template>
 
 <script>
-import Tabbar from '@/components/commen/Tabbar.vue'
+import Tabbar from "@/components/commen/Tabbar.vue";
 export default {
   name: "MyPage",
-  components:{
-  	  Tabbar
-  }
+  components: {
+    Tabbar,
+  },
 };
 </script>

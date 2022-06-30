@@ -1,7 +1,8 @@
 let path = require("path");
+const { defineConfig } = require('@vue/cli-service')
 module.exports = {
-	//代理
-	/*
+  //代理
+  /*
 	devServer: {
 	  proxy: {
 	    '/api': {
@@ -13,6 +14,7 @@ module.exports = {
 	    }
 	  },
 	},*/
+	lintOnSave: false,
 	configureWebpack: (config) => {
     	config.resolve = { 
       		extensions: ['.js', '.json', '.vue'],

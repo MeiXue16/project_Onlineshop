@@ -1,0 +1,39 @@
+一、路径上的配置
+
+		vue.config.js 配置了@代表src目录
+
+	代码：
+
+		let path = require("path");
+		module.exports = {
+			configureWebpack: (config) => {
+		    	config.resolve = { 
+		      		extensions: ['.js', '.json', '.vue'],
+		      		alias: {
+		       	 		'@': path.resolve(__dirname, './src'),
+		      		}
+		    	}
+		  	}
+		}
+
+二、定义tabbar
+
+	跳转this.$router.xxx  
+
+	判断：如果是当前路由切换，就不跳转(return)
+
+三、目录分配
+
+	views 		===》 页面
+	components  ===》页面中的组件（模块）
+
+四、头部topbar切换插件
+
+	4.1 下载插件
+	
+		npm install ly-tab -S
+		
+	4.2 引入插件
+	
+		import LyTab from 'ly-tab'
+		Vue.use(LyTab)

@@ -1,16 +1,16 @@
 <template>
-	<div class='list'>
-		this is list.
-		<Tabbar></Tabbar>
-	</div>
+  <div class="list">
+    this is list.
+    <Tabbar></Tabbar>
+  </div>
 </template>
 
 <script>
-import Tabbar from '@/components/commen/Tabbar.vue'
+import Tabbar from "@/components/commen/Tabbar.vue";
 export default {
   name: "MyList",
-  components:{
-  	  Tabbar
-  }
+  components: {
+    Tabbar,
+  },
 };
 </script>
