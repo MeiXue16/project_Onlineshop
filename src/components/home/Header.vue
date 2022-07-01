@@ -41,6 +41,7 @@ header h1 img {
   height: 40px;
   background-color: #fff;
   border-radius: 12px;
+  margin-left: 15px;
 }
 .search i {
   padding: 0 6px;
@@ -53,5 +54,6 @@ header h1 img {
 .kefu i {
   font-size: 36px;
   color: #fff;
+  margin-left: 10px;
 }
 </style>
