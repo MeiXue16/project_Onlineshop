@@ -13,6 +13,7 @@
 	<section>
 		<Swiper>
 		</Swiper>
+		<Icons></Icons>
 	</section>
     <Tabbar></Tabbar>
   </div>
@@ -22,6 +23,7 @@
 import Header from "@/components/home/Header.vue";
 import Tabbar from "@/components/commen/Tabbar.vue";
 import Swiper from "@/components/home/Swiper.vue";
+import Icons from "@/components/home/Icons.vue";
 export default {
   name: "HomeView",
   data() {
@@ -46,7 +48,8 @@ export default {
   components: {
     Header,
     Tabbar,
-	Swiper
+	Swiper,
+	Icons,
   },
 };
 </script>
