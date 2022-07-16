@@ -3,13 +3,13 @@
 		<swiper :options="swiperOption">
 			<swiper-slide 
 			   v-for ='(item, index) in swiperList' 
-			   :key='index'>
+			   :key='index'> <!--这里key也可以是'id'-->
 			   <img :src='item.imgUrl' alt=''>
 			</swiper-slide>
 		</swiper>
 		<div class="swiper-pagination"></div>
 	</div>
-</template>
+</template> 
 
 <script>
 import 'swiper/dist/css/swiper.css'
@@ -50,6 +50,7 @@ export default {
 
 <style scoped>
 .swiper-main{
+	position: relative;
 	width: 100%;
 	height: 165px;
 	margin-top: 60px;
@@ -57,5 +58,19 @@ export default {
 .swiper-main img{
 	width: 100%;
 	height: 165px;
+}
+.swiper-container{
+	width:100%;
+	height:165px;
+}
+.swiper-pagination{
+	width: 100%;
+	bottom: 0;
+}
+::v-deep .swiper-pagination-bullet-active{
+	background-color: #b0352f;
+}
+::v-deep .swiper-pagination-bullet{
+	margin:0 3px;
 }
 </style>
