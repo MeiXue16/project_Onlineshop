@@ -59,7 +59,7 @@ export default{
 	height:38px;
 }
 .icons span{
-	font-size: 16px;
+	font-size: 10px;
 	padding:6px 0;
 }
 </style>

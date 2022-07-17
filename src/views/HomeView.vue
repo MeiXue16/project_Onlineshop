@@ -11,9 +11,9 @@
 		/>
 	</ly-tabs>	
 	<section>
-		<Swiper>
-		</Swiper>
+		<Swiper></Swiper>
 		<Icons></Icons>
+		<Recommend></Recommend>
 	</section>
     <Tabbar></Tabbar>
   </div>
@@ -24,6 +24,7 @@ import Header from "@/components/home/Header.vue";
 import Tabbar from "@/components/commen/Tabbar.vue";
 import Swiper from "@/components/home/Swiper.vue";
 import Icons from "@/components/home/Icons.vue";
+import Recommend from "@/components/home/Recommend.vue";
 export default {
   name: "HomeView",
   data() {
@@ -50,6 +51,7 @@ export default {
     Tabbar,
 	Swiper,
 	Icons,
+	Recommend,
   },
 };
 </script>

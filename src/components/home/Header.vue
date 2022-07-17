@@ -27,7 +27,7 @@ header {
   align-items: center;
 }
 header h1 {
-  width: 10%;
+  width: 20%;
   height: 50px;
 }
 header h1 img {
@@ -37,7 +37,7 @@ header h1 img {
 .search {
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 65%;
   height: 40px;
   background-color: #fff;
   border-radius: 12px;
