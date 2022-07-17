@@ -19,6 +19,7 @@
 header {
   display: flex;
   position: fixed;
+  justify-content: space-around;
   background-color: #b0352f;
   top: 0;
   left: 0;

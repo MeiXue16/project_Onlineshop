@@ -1,19 +1,28 @@
 <template>
   <div class="home">
-    <Header></Header>
-	<ly-tabs v-model="tabsValue" :options="options">
-		<ly-tab-item
-			v-for="item in tabsItems"
-			:key="item.value"
-			:title="item.title"
-			:name="item.value"
-			:badge="item.badge"
-		/>
-	</ly-tabs>	
-	<section>
-		<Swiper></Swiper>
-		<Icons></Icons>
-		<Recommend></Recommend>
+	<div class='headers'>
+		<div class='headers-main'>
+			<Header></Header>
+			<ly-tabs v-model="tabsValue" :options="options">
+				<ly-tab-item
+					v-for="item in tabsItems"
+					:key="item.value"
+					:title="item.title"
+					:name="item.value"
+					:badge="item.badge"
+				/>
+			</ly-tabs>
+		</div>
+	</div>
+	<section ref='wrapper'>
+		<div>
+			<div>
+				<Swiper></Swiper>
+				<Icons></Icons>
+				<Recommend></Recommend>
+			</div>
+		</div>
+
 	</section>
     <Tabbar></Tabbar>
   </div>
@@ -25,6 +34,8 @@ import Tabbar from "@/components/commen/Tabbar.vue";
 import Swiper from "@/components/home/Swiper.vue";
 import Icons from "@/components/home/Icons.vue";
 import Recommend from "@/components/home/Recommend.vue";
+//引入插件
+import BetterScroll from 'better-scroll';
 export default {
   name: "HomeView",
   data() {
@@ -53,10 +64,36 @@ export default {
 	Icons,
 	Recommend,
   },
+  mounted(){
+  	new BetterScroll(this.$refs.wrapper, {
+  	  movable: true,
+  	  zoom: true
+  	})
+  },
 };
 </script>
 
 <style scoped>
+.home{
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+.headers{
+	width: 100%;
+	height: 100px;
+}
+.headers-main{
+	position: fixed;
+	left:0;
+	top:0;
+}
+section{
+	flex:1;
+	overflow: hidden;
+}
 .ly-tabs{
 	postion:fixed;
 	top:60px;
@@ -65,5 +102,9 @@ export default {
 .ly-tabs ly-tab-item{
 	box-shadow: none;
 	border-bottom: none;
+}
+::v-deep .ly-tabbar{
+	box-shadow:none;
+	border-bottom:none;
 }
 </style>

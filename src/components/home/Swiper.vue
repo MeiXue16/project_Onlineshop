@@ -53,7 +53,7 @@ export default {
 	position: relative;
 	width: 100%;
 	height: 165px;
-	margin-top: 60px;
+	
 }
 .swiper-main img{
 	width: 100%;
