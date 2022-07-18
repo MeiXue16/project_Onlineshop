@@ -20,6 +20,7 @@
 				<Swiper></Swiper>
 				<Icons></Icons>
 				<Recommend></Recommend>
+				<Like></Like>
 			</div>
 		</div>
 
@@ -34,6 +35,7 @@ import Tabbar from "@/components/commen/Tabbar.vue";
 import Swiper from "@/components/home/Swiper.vue";
 import Icons from "@/components/home/Icons.vue";
 import Recommend from "@/components/home/Recommend.vue";
+import Like from "@/components/home/Like.vue";
 //引入插件
 import BetterScroll from 'better-scroll';
 export default {
@@ -63,6 +65,7 @@ export default {
 	Swiper,
 	Icons,
 	Recommend,
+	Like
   },
   mounted(){
   	new BetterScroll(this.$refs.wrapper, {

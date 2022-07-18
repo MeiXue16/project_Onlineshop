@@ -49,37 +49,40 @@ export default{
 </script>
 
 <style scoped>
-	.recommend ul li{
-		position: relative;
-	}
-	.recommend ul li h2{
-		padding:0 60px;
-	}
-	.recommend ul li img{
-		width: 70px;
-		height:100px;
-		border-radius: 10px;
-	}
-	.recommend ul li > div{
-		position: absolute;
-		right:0;
-		top:0;
-		display: flex;
-		flex-direction: column;
-		padding:10px 30px;
-	}
-	.recommend ul li > div h3{
-		font-size:12px;
-	}
-	.recommend ul li > div p{
-		font-size:10px;
-	}
-	.price{
-		margin-top: 10px;
-		text-align: right;
-		color:red;
-	}
-	.price span{
-		font-size:10px;
-	}
+.recommend ul li{
+	position: relative;
+}
+.recommend ul li h2{
+	padding:0 30px;
+}
+.recommend ul li img{
+	width: 75px;
+	height:100px;
+	border-radius: 10px;
+}
+.recommend ul li > div{
+	position: absolute;
+	right:0;
+	top:0;
+	display: flex;
+	flex-direction: column;
+	padding:20px 30px;
+}
+.recommend ul li > div h3{
+	font-size:12px;
+}
+.recommend ul li > div p{
+	font-size:10px;
+}
+.price{
+	margin-top: 5px;
+	text-align: right;
+	color:red;
+}
+.price b{
+	font-size:12px;
+}
+.price span{
+	font-size:10px;
+}
 </style>

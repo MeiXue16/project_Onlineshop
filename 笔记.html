@@ -37,6 +37,20 @@
 	
 		import LyTab from 'ly-tab'
 		Vue.use(LyTab)
+		
+五、swiper插件
+	5.1 下载 npm install vue-awesome-swiper@3.1.3 -S 
+	
+六、better-scroll滚动插件 
+	6.1 下载插件 npm install better-scroll -S 
+	6.2 引入配置 import BetterScroll from 'better-scroll' 
+	let bs = new BetterScroll('.wrapper', { movable: true, zoom: true }) 
+	子元素高度比父元素高度要高，必须添加在mounted中
+
+七、vue中的ref ： 获取dom 设置：
+获取：this.$refs.aaa
+
+
 1.通过vue create tea 命令创建vue前端项目
 2.通过安装express generator，创建后端项目server
 3.在后端项目server中通过npm install安装依赖.
