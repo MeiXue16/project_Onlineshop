@@ -22,26 +22,29 @@
 <script>
 import Card from '@/components/home/Card.vue';
 export default{
-	data(){
-		return{
-			recommendList:[
-				{
-					id:1,
-					imgUrl:'./images/recommend1.jpeg',
-					name:'Long Jing Grüner Tee Green Tea 125g',
-					content:'aus der HangZhou, China (Frühjahrsernte 2022)',
-					price:24.99
-				},
-				{
-					id:2,
-					imgUrl:'./images/recommend2.jpeg',
-					name:'Milch Oolong Tee Hohe Qualität 250g',
-					content:'100% Natural Green Food',
-					price:13.51
-				}
-			]
-		}
+	props:{
+		recommendList:Array
 	},
+		//data(){
+		// return{
+		// 	recommendList:[
+		// 		{
+		// 			id:1,
+		// 			imgUrl:'./images/recommend1.jpeg',
+		// 			name:'Long Jing Grüner Tee Green Tea 125g',
+		// 			content:'aus der HangZhou, China (Frühjahrsernte 2022)',
+		// 			price:24.99
+		// 		},
+		// 		{
+		// 			id:2,
+		// 			imgUrl:'./images/recommend2.jpeg',
+		// 			name:'Milch Oolong Tee Hohe Qualität 250g',
+		// 			content:'100% Natural Green Food',
+		// 			price:13.51
+		// 		}
+		// 	]
+		//}
+	  //},
 	components:{
 		Card
 	}

@@ -9,37 +9,40 @@
 
 <script>
 export default{
-	data(){
-		return{
-			iconsList:[
-				{
-					id:1,
-					title:'Tee zum Selbsttrinken',
-					imgUrl:'./images/icons1.png'
-				},
-				{
-					id:2,
-					title:'Teezubehör',
-					imgUrl:'./images/icons2.png'
-				},
-				{
-					id:3,
-					title:'Tee Geschenkbox',
-					imgUrl:'./images/icons3.png'
-				},
-				{
-					id:4,
-					title:'Vorteile erhalten',
-					imgUrl:'./images/icons4.png'
-				},
-				{
-					id:5,
-					title:'Quellenprüfung',
-					imgUrl:'./images/icons5.png'
-				},
-			]
-		}
-	}
+		 props:{
+			iconsList:Array
+		 }
+	// data(){
+	// 	return{
+	// 		iconsList:[
+	// 			{
+	// 				id:1,
+	// 				title:'Tee zum Selbsttrinken',
+	// 				imgUrl:'./images/icons1.png'
+	// 			},
+	// 			{
+	// 				id:2,
+	// 				title:'Teezubehör',
+	// 				imgUrl:'./images/icons2.png'
+	// 			},
+	// 			{
+	// 				id:3,
+	// 				title:'Tee Geschenkbox',
+	// 				imgUrl:'./images/icons3.png'
+	// 			},
+	// 			{
+	// 				id:4,
+	// 				title:'Vorteile erhalten',
+	// 				imgUrl:'./images/icons4.png'
+	// 			},
+	// 			{
+	// 				id:5,
+	// 				title:'Quellenprüfung',
+	// 				imgUrl:'./images/icons5.png'
+	// 			},
+	// 		]
+	// 	}
+	// }
 }
 </script>
 

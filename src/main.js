@@ -13,7 +13,8 @@ import '@/assets/js/flexible';
 //引入ly-tab插件
 import LyTab from 'ly-tab';
 Vue.use(LyTab);
-
+//引入axios
+import axios from 'axios';
 
 
 Vue.config.productionTip = false;

@@ -21,30 +21,33 @@
 <script>
 import Card from '@/components/home/Card.vue';
 export default{
-	data(){
-		return{
-			likeList:[
-				{
-					id:1,
-					imgUrl:'./images/like1.jpeg',
-					name:'BASILUR Chinese White Tea Papierverpackung 100g',
-					price:6.22
-				},
-				{
-					id:2,
-					imgUrl:'./images/like2.jpeg',
-					name:'Ronnefeldt Pu-Erh Schwarzer Tee 1250 g',
-					price:79
-				},
-				{
-					id:3,
-					imgUrl:'./images/like3.jpeg',
-					name:'Purasana Pu-Erh Fatburner Tee 20 St Filterbeutel',
-					price:3.87
-				},
-			]
-		}
+	props:{
+			likeList:Array
 	},
+	// data(){
+	// 	return{
+	// 		likeList:[
+	// 			{
+	// 				id:1,
+	// 				imgUrl:'./images/like1.jpeg',
+	// 				name:'BASILUR Chinese White Tea Papierverpackung 100g',
+	// 				price:6.22
+	// 			},
+	// 			{
+	// 				id:2,
+	// 				imgUrl:'./images/like2.jpeg',
+	// 				name:'Ronnefeldt Pu-Erh Schwarzer Tee 1250 g',
+	// 				price:79
+	// 			},
+	// 			{
+	// 				id:3,
+	// 				imgUrl:'./images/like3.jpeg',
+	// 				name:'Purasana Pu-Erh Fatburner Tee 20 St Filterbeutel',
+	// 				price:3.87
+	// 			},
+	// 		]
+	// 	}
+	// },
 	components:{
 		Card
 	}

@@ -16,22 +16,25 @@ import 'swiper/dist/css/swiper.css'
 import {swiper, swiperSlide} from 'vue-awesome-swiper'
 export default {
   name: 'Swiper',
+  props:{
+  	swiperList:Array
+  },
   data(){
     return{
-		swiperList:[
-			{
-				id:1,
-				imgUrl:'./images/swiper1.jpeg'
-			},
-			{
-				id:2,
-				imgUrl:'./images/swiper2.jpeg'
-			},
-			{
-				id:3,
-				imgUrl:'./images/swiper3.jpeg'
-			}
-		],
+		// swiperList:[
+		// 	{
+		// 		id:1,
+		// 		imgUrl:'./images/swiper1.jpeg'
+		// 	},
+		// 	{
+		// 		id:2,
+		// 		imgUrl:'./images/swiper2.jpeg'
+		// 	},
+		// 	{
+		// 		id:3,
+		// 		imgUrl:'./images/swiper3.jpeg'
+		// 	}
+		// ],
 		swiperOption: {//swiper3
 			autoplay: 3000,
 			speed: 1000,
