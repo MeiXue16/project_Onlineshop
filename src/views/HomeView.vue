@@ -12,7 +12,7 @@
 								:key="item.id"
 								:name="item.id"
 								:title="item.title"
-								@change='changeTab(item.id)'
+								
 							/>
 						</ly-tabs>
 			</div>
@@ -75,7 +75,6 @@ export default {
 			// 	{ title: 'Yellow Tea', value: '7' },
 			// 	{ title: 'Dark Tea', value: '8' },
 			// ],
-			
 			selectedId: 0,
 			tabsItems: [],
 			newData:[],
@@ -98,42 +97,57 @@ export default {
   created(){
 		this.getData();
 	},
-	mounted(){
-		new BetterScroll(this.$refs.wrapper, {
-			movable: true,
-			zoom: true,
-			click:true
+	// mounted(){
+	// 	new BetterScroll(this.$refs.wrapper, {
+	// 		movable: true,
+	// 		zoom: true
+	// 		// click:true
+	// 	})
+	// },
+  methods:{
+	async getData(){
+		
+		let res = await axios({
+			url:'/api/index_list/0/data/1'
+		}); 
+		
+		//console.log( res );	
+		this.tabsItems = Object.freeze(res.data.data.tabsItems);
+		this.newData = Object.freeze(res.data.data.data);
+		
+		//
+		this.oBetterScroll = this.$nextTick( () =>{
+			new BetterScroll(this.$refs.wrapper, {
+					movable: true,
+					zoom: true
+					// click:true
+			})
 		})
-	},
-	methods:{
-		async getData(){
-			
-			let res = await axios({
-				url:'/api/index_list/0/data/1'
-			}); 
-			
-			//console.log( res );	
-			this.tabsItems = Object.freeze(res.data.data.tabsItems);
-			this.newData = Object.freeze(res.data.data.data);
 		},
-		async addData( index ){
-			
-			let res = await axios({
-				url:'/api/index_list/'+index+'/data/1'
-			});
-			
-			if(  res.data.data.constructor !=Array ){
-				this.newData = res.data.data.data;
-			}else{
-				this.newData = res.data.data;
-			}
-			
-		},
-		changeTab(id){
-			console.log('LyTabs change:', id);
-			this.addData(id)
+	async addData( index ){
+		
+		let res = await axios({
+			url:'/api/index_list/'+index+'/data/1'
+		});
+		
+		if(  res.data.data.constructor !=Array ){
+			this.newData = res.data.data.data;
+		}else{
+			this.newData = res.data.data;
 		}
+		this.$nextTick( () =>{
+			this.tBetterScroll = new BetterScroll(this.$refs.wrapper, {
+					movable: true,
+					zoom: true
+					// click:true
+			})
+		})	
+	},
+	changeTab(id){
+		console.log('LyTabs change:', id);
+		this.addData(id)
 	}
+  }
 };
 </script>
 
@@ -159,16 +173,16 @@ section{
 	overflow: hidden;
 }
 .ly-tabs{
-	postion:fixed;
+	/* postion:fixed; */
 	top:60px;
-	left:0;
+	/* left:0; */
 }
 .ly-tabs ly-tab-item{
 	box-shadow: none;
 	border-bottom: none;
 }
-::v-deep .ly-tabbar{
+ ::v-deep .ly-tabbar{
 	box-shadow:none;
-	border-bottom:none;
-}
+	border-bottom:none; 
+} 
 </style>

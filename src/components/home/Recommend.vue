@@ -67,15 +67,20 @@ export default{
 	position: absolute;
 	right:0;
 	top:0;
+	left: 120px;
 	display: flex;
 	flex-direction: column;
 	padding:20px 30px;
 }
 .recommend ul li > div h3{
 	font-size:12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .recommend ul li > div p{
 	font-size:10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .price{
 	margin-top: 5px;

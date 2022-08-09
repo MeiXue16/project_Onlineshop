@@ -3,9 +3,9 @@
     <h1>
       <img src="@/assets/images/logo.png" alt="" />
     </h1>
-    <div class="search">
+    <div class="search" @click="goSearch">
       <i class="iconfont icon-fangdajing"></i>
-      <span>I search ...</span>
+      <span>Ich suche...</span>
     </div>
     <div class="kefu">
       <i class="iconfont icon-kefu"></i>
@@ -13,7 +13,15 @@
   </header>
 </template>
 
-<script></script>
+<script>
+export default{
+	methods:{
+		goSearch(){
+			this.$router.push('/search')
+		}
+	}
+}
+</script>
 
 <style scoped>
 header {

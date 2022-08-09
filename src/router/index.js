@@ -29,6 +29,12 @@ const routes = [
     name: "MyPage",
     component: () => import("@/views/MyPage.vue"),
   },
+  {
+    path: "/search",
+    name: "Search",
+    component: () => import("@/views/Search.vue"),
+  }
+  
 ];
 
 const router = new VueRouter({
