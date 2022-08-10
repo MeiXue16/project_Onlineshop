@@ -1,6 +1,6 @@
 <template>
 	<header>
-		<div class="return">
+		<div class="return" @click="goBack">
 			<i class="iconfont icon-fanhui"></i>
 		</div>
 		<div class="search-main">
@@ -10,11 +10,25 @@
 			</form>
 				
 		</div>
-		<div class="search-button">suchen</div>
+		<div class="search-button" @click="goSearchList">suchen</div>
 	</header>
 </template>
 
 <script>
+export default{
+	methods:{
+		goBack(){
+			this.$router.back();
+		},
+		goSearchList(){
+			this.$router.push({
+				name:'List'
+			}
+			);
+		}
+	}
+
+}
 </script>
 
 <style scoped>
@@ -32,7 +46,7 @@ header{
 }
 .return i{
 	padding: 6px 5px;
-	font-size: 16px;
+	font-size: 20px;
 }
 .search-main{
 	display: flex;

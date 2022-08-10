@@ -27,26 +27,26 @@ export default {
         {
           title: "hompage",
           path: "/home", //与router/index.js里routes路径设置名称一致
-          active: "./images/home.png",
-          selected: "./images/home-select.png",
+          active: "/images/home.png",
+          selected: "/images/home-select.png",
         },
         {
           title: "list",
           path: "/list",
-          active: "./images/list.png",
-          selected: "./images/list-select.png",
+          active: "/images/list.png",
+          selected: "/images/list-select.png",
         },
         {
           title: "cart",
           path: "/cart",
-          active: "./images/cart.png",
-          selected: "./images/cart-select.png",
+          active: "/images/cart.png",
+          selected: "/images/cart-select.png",
         },
         {
           title: "my",
           path: "/my",
-          active: "./images/my.png",
-          selected: "./images/my-select.png",
+          active: "/images/my.png",
+          selected: "/images/my-select.png",
         },
       ],
     };
