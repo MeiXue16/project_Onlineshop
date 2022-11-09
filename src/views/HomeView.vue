@@ -3,7 +3,7 @@
 	  <div class='headers'>
 		  <div class='headers-main'>
 						<Header></Header>
-						<ly-tabs 
+						<!-- <ly-tabs 
 								v-model="tabsValue" 
 								:options="options" 
 								@change='changeTab'> 
@@ -14,12 +14,25 @@
 								:title="item.title"
 								
 							/>
+						</ly-tabs> -->
+						<ly-tabs v-model="tabsValue" :options="options">
+										<ly-tab-item
+											v-for="item in tabsItems"
+											:key="item.value"
+											:title="item.title"
+											:name="item.value"
+											:badge="item.badge"
+										/>
 						</ly-tabs>
 			</div>
 		</div>
 		<section ref='wrapper'>
 			<div>
-				<div v-for='(item,index) in newData' :key='index'>
+				<Swiper></Swiper>
+				<Icons></Icons>
+				<Recommend></Recommend>
+				<Like></Like>
+				<!-- <div v-for='(item,index) in newData' :key='index'>
 					<Swiper 
 						v-if='item.type=="swiperList"'
 						:swiperList='item.data'
@@ -40,7 +53,7 @@
 						v-if='item.type=="likeList"'
 						:likeList='item.data'
 					></Like>
-				</div>
+				</div> -->
 			</div>
 	
 		</section>
@@ -64,17 +77,17 @@ export default {
   data() {
     return  {
 			tabsValue: 'fe',
-			// tabBarValue: 'home',
-			// tabsItems: [
-			// 	{ title: 'Recommend', value: '1' },
-			// 	{ title: 'Black Tea', value: '2' },
-			// 	{ title: 'Green Tea', value: '3' },
-			// 	{ title: 'Oolong Tea', value: '4' }, //, badge: 22
-			// 	{ title: 'White Tea', value: '5' },
-			// 	{ title: 'Pu-erh', value: '6' },
-			// 	{ title: 'Yellow Tea', value: '7' },
-			// 	{ title: 'Dark Tea', value: '8' },
-			// ],
+			tabBarValue: 'home',
+			tabsItems: [
+				{ title: 'Recommend', value: '1' },
+				{ title: 'Black Tea', value: '2' },
+				{ title: 'Green Tea', value: '3' },
+				{ title: 'Oolong Tea', value: '4' }, //, badge: 22
+				{ title: 'White Tea', value: '5' },
+				{ title: 'Pu-erh', value: '6' },
+				{ title: 'Yellow Tea', value: '7' },
+				{ title: 'Dark Tea', value: '8' },
+			],
 			selectedId: 0,
 			tabsItems: [],
 			newData:[],
@@ -94,60 +107,61 @@ export default {
 		Ad,
 		Like
   },
-  created(){
-		this.getData();
-	},
-	// mounted(){
-	// 	new BetterScroll(this.$refs.wrapper, {
-	// 		movable: true,
-	// 		zoom: true
-	// 		// click:true
-	// 	})
+ //  created(){
+	// 	this.getData();
 	// },
-  methods:{
-	async getData(){
-		
-		let res = await axios({
-			url:'/api/index_list/0/data/1'
-		}); 
-		
-		//console.log( res );	
-		this.tabsItems = Object.freeze(res.data.data.tabsItems);
-		this.newData = Object.freeze(res.data.data.data);
-		
-		//
-		this.oBetterScroll = this.$nextTick( () =>{
-			new BetterScroll(this.$refs.wrapper, {
-					movable: true,
-					zoom: true
-					// click:true
-			})
+	mounted(){
+		new BetterScroll(this.$refs.wrapper, {
+			movable: true,
+			zoom: true
+			// click:true
 		})
-		},
-	async addData( index ){
-		
-		let res = await axios({
-			url:'/api/index_list/'+index+'/data/1'
-		});
-		
-		if(  res.data.data.constructor !=Array ){
-			this.newData = res.data.data.data;
-		}else{
-			this.newData = res.data.data;
-		}
-		this.$nextTick( () =>{
-			this.tBetterScroll = new BetterScroll(this.$refs.wrapper, {
-					movable: true,
-					zoom: true
-					// click:true
-			})
-		})	
 	},
-	changeTab(id){
-		console.log('LyTabs change:', id);
-		this.addData(id)
-	}
-  }
+ //  methods:{
+	// async getData(){
+		
+	// 	let res = await axios({
+	// 		url:'/api/index_list/0/data/1'
+	// 	}); 
+		
+	// 	//console.log( res );	
+	// 	this.tabsItems = Object.freeze(res.data.data.tabsItems);
+	// 	this.newData = Object.freeze(res.data.data.data);
+		
+	// 	//Nach der Darstellung der gesamten Ansicht 
+	// 	//(nach der Aktualisierung des DOM) die BetterScroll Methode laden
+	// 	this.$nextTick( () =>{
+	// 		this.oBetterScroll = new BetterScroll(this.$refs.wrapper, {
+	// 				movable: true,
+	// 				zoom: true
+	// 				// click:true
+	// 		})
+	// 	})
+	// 	},
+	// async addData( index ){
+		
+	// 	let res = await axios({
+	// 		url:'/api/index_list/'+index+'/data/1'
+	// 	});
+		
+	// 	if(  res.data.data.constructor !=Array ){
+	// 		this.newData = res.data.data.data;
+	// 	}else{
+	// 		this.newData = res.data.data;
+	// 	}
+	// 	this.$nextTick( () =>{
+	// 		this.tBetterScroll = new BetterScroll(this.$refs.wrapper, {
+	// 				movable: true,
+	// 				zoom: true
+	// 				// click:true
+	// 		})
+	// 	})	
+	// },
+	// changeTab(id){
+	// 	console.log('LyTabs change:', id);
+	// 	this.addData(id)
+	// }
+  // }
 };
 </script>
 
